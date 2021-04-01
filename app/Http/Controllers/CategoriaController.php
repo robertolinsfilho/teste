@@ -1,17 +1,18 @@
 <?php
-  
+
 namespace App\Http\Controllers;
-  
-use App\Brand;
+
+use App\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-class BrandController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,10 +22,10 @@ class BrandController extends Controller
     public function check()
     {
        $id = auth()->user()->id;
-       $results = DB::select('select * from users where id = '.$id.' and nivel = 4 or nivel = 2 or nivel = 3' );
+       $results = DB::select('select * from users where id = '.$id.' and nivel = 4  or nivel = 3' );
        if($results){
-        $brands = Brand::latest()->paginate(5);
-        return view('brands.index',compact('brands'));
+        $categorias = Categoria::latest()->paginate(5);
+        return view('categorias.index',compact('categorias'));
        }else{
         return redirect()->route('home')
         ->with('success','Você não tem acesso ');
@@ -35,12 +36,12 @@ class BrandController extends Controller
     }
     public function index()
     {
-        $brands = Brand::latest()->paginate(5);
+        $categorias = Categoria::latest()->paginate(5);
   
-        return view('brands.index',compact('brands'))
+        return view('categorias.index',compact('categorias'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-   
+
     /**
      * Show the form for creating a new resource.
      *
@@ -48,9 +49,9 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('brands.create');
+        return view('categorias.create');
     }
-  
+
     /**
      * Store a newly created resource in storage.
      *
@@ -60,69 +61,69 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'brand' => 'required',
+            'categoria' => 'required',
             
         ]);
   
-        Brand::create($request->all());
+        Categoria::create($request->all());
    
-        return redirect()->route('brands.index')
-                        ->with('success','Marca Criada Com Sucesso');
+        return redirect()->route('categorias.index')
+                        ->with('success','Categoria Criada Com Sucesso');
     }
-   
+
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show(Categoria $categoria)
     {
-        return view('brands.show',compact('brand'));
+        return view('categorias.show',compact('categoria'));
     }
-   
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Brand  $product
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(Categoria $categoria)
     {
-        return view('brands.edit',compact('brand'));
+        return view('categorias.edit',compact('categoria'));
     }
-  
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, Categoria $categoria)
     {
         $request->validate([
-            'brand' => 'required',
+            'categoria' => 'required',
            
         ]);
   
-        $brand->update($request->all());
+        $categoria->update($request->all());
   
-        return redirect()->route('brands.index')
-                        ->with('success','Marca Atualizada Com Sucesso');
+        return redirect()->route('categorias.index')
+                        ->with('success','Categoria Atualizada Com Sucesso');
     }
-  
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(Categoria $categoria)
     {
-        $brand->delete();
+        $categoria->delete();
   
-        return redirect()->route('brands.index')
-                        ->with('success','Marca Deletada');
+        return redirect()->route('categorias.index')
+                        ->with('success','Categoria Deletada');
     }
 }

@@ -68,7 +68,7 @@
                             </li>
                             <li  class="nav-item ">
                             <a  class="nav-link active" href="{{route('users.index')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   Usúarios <span class="caret"></span>
+                                   Usuários <span class="caret"></span>
                                 </a>
                             </li>
                             <li  class="nav-item ">
@@ -77,7 +77,7 @@
                                 </a>
                             </li>
                             <li  class="nav-item">
-                            <a   class="nav-link active" href="{{route('categories.index')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a   class="nav-link active" href="{{route('categorias.index')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    Categorias <span class="caret"></span>
                                 </a>
                             </li>

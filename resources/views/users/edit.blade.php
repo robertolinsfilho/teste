@@ -31,19 +31,19 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong>Nome:</strong>
                     <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Nome:">
                 </div>
             </div>
             
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="p-3 col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Email:</strong>
                     <input class="form-control" value="{{ $user->email }}"  name="email" placeholder="Email">
                 </div>
             </div>
           
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class=" col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nível:</strong>
                     <select class="form-control" name="nivel">
@@ -52,11 +52,12 @@
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                    <option value="5">5</option>
+                   
                     </select>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+           
+            <div class="p-3 col-xs-12 col-sm-12 col-md-12 text-center">
             <br>
               <button type="submit" class="btn btn-primary">Editar</button>
             </div>

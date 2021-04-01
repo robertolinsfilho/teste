@@ -31,12 +31,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Marca:</strong>
-                <input type="text" name="brand" class="form-control" placeholder="Marca">
+                <input type="text" name="brand" class=" form-control" placeholder="Marca">
             </div>
         </div>
       
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="p-3 col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
     </div>
    

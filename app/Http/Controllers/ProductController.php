@@ -23,7 +23,7 @@ class ProductController extends Controller
     public function check()
     {
        $id = auth()->user()->id;
-       $results = DB::select('select * from users where id = '.$id.' and nivel = 1 or nivel = 2 or nivel = 3' );
+       $results = DB::select('select * from users where id = '.$id.' and nivel = 1 or nivel = 2 or nivel = 3 or nivel = 4' );
        if($results){
         $products = Product::latest()->paginate(5);
         return view('products.index',compact('products'));

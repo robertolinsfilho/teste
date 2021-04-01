@@ -1,0 +1,4 @@
+Nessa pasta tem o banco de de dados pronto com um usuario administrados e so importar e o laravel ta configurado para localhost com login root senha vazia e o nome do banco blog qualquer coisa e so mudar
+
+
+Com isso para logar voce pode se cadastrar na entrada mas, so terá acesso nivel 1 que so pode acessar  produtos , mas o usuario admin cadastrado no  banco que coloquei na pasta pode alterar isso  para logar com ele e login:admin@admin.com.br e senha: adminadmin esse usuario tem acesso a tudo pode alterar o nivel de permissão de cada usuario que vai de 1 a 4 

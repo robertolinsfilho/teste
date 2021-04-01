@@ -5,10 +5,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Cadastrar Categorias</h2>
+            <h2>Adicionar Categorias</h2>
         </div>
         <div style="margin-left:100%">
-            <a class="btn btn-primary" href="{{ route('categories.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -24,14 +24,14 @@
     </div>
 @endif
    
-<form action="{{ route('categories.store') }}" method="POST">
+<form action="{{ route('categorias.store') }}" method="POST">
     @csrf
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Categoria:</strong>
-                <input type="text" name="categorie" class="form-control" placeholder="Categoria">
+                <strong>Categorias:</strong>
+                <input type="text" name="categoria" class="form-control" placeholder="Marca">
             </div>
         </div>
       

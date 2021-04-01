@@ -19,7 +19,7 @@ class UserController extends Controller
     public function check()
     {
        $id = auth()->user()->id;
-       $results = DB::select('select * from users where id = '.$id.' and nivel = 1 or nivel = 2 or nivel = 3' );
+       $results = DB::select('select * from users where id = '.$id.' and nivel = 4' );
        if($results){
         $users = User::latest()->paginate(5);
         return view('users.index',compact('users'));
@@ -96,6 +96,7 @@ class UserController extends Controller
             $request->validate([
                 'name' => 'required',
                 'email' => 'required',
+                
             ]);
       
             $user->update($request->all());

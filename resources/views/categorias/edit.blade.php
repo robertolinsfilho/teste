@@ -8,7 +8,7 @@
                 <h2>Editar Marca</h2>
             </div>
             <div style="margin-left: 100%;">
-                <a class="btn btn-primary" href="{{ route('categories.index') }}"> Voltar</a>
+                <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Voltar</a>
             </div>
         </div>
     </div>
@@ -23,15 +23,16 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('categories.update','$categorie->id') }}" method="POST">
+  
+    <form action="{{ route('categorias.update',$categoria->id) }}" method="POST">
         @csrf
         @method('PUT')
    
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Categoria:</strong>
-                    <input type="text" name="categorie" value="{{ $categorie->categorie }}" class="form-control" placeholder="Name">
+                    <strong>Marca:</strong>
+                    <input type="text" name="categoria" value="{{ $categoria->categoria }}" class="form-control" placeholder="Name">
                 </div>
             </div>
            

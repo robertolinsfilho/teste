@@ -11,19 +11,15 @@
         </div>
     </div>
    
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
+  
    
-    <table class="table table-bordered">
+    <table style="margin-top: 2%;" class=" table table-bordered">
         <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Nível</th>
-            <th width="280px">Action</th>
+            <th width="280px">Ação</th>
         </tr>
         @foreach ($users as $user)
         <tr>
